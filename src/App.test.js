@@ -8,23 +8,22 @@ test('renders four blocks per page', () => {
   expect(blocksNumber.length).toEqual(4);
 });
 
-test('only visible next button on first page', () => {
+test('disable prev button on first page', () => {
   render(<App />);
-  let element = screen.getAllByRole('button');
-  expect(element.length).toEqual(1);
-  expect(element[0]).toHaveClass('rightArrow')
+  let leftArrow = screen.getAllByRole('button').find(value => value.className === 'leftArrow') 
+  expect(leftArrow).toHaveAttribute('disabled')
 });
 
-test('only visible prev button on last page', () => {
+test('disable next button on last page', () => {
   render(<App />);
   
   // moving to second page clicking on right arrow
-  userEvent.click(screen.getByRole('button'))
+  let rightArrow = screen.getAllByRole('button').find(value => value.className === 'rightArrow');
+  userEvent.click(rightArrow);
   // moving to last page clicking on right arrow
-  let rightArrow = screen.getAllByRole('button').find(value => value.className === 'rightArrow')
-  userEvent.click(rightArrow)
+  rightArrow = screen.getAllByRole('button').find(value => value.className === 'rightArrow');
+  userEvent.click(rightArrow);
   
-  let element = screen.getAllByRole('button');
-  expect(element.length).toEqual(1);
-  expect(element[0]).toHaveClass('leftArrow')
+  rightArrow = screen.getAllByRole('button').find(value => value.className === 'rightArrow')
+  expect(rightArrow).toHaveAttribute('disabled')
 });
