@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import css from './css.module.scss'
+import Slider from './components/Slider';
+import data from './assets/data.json'
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={css.App}>
+      <h1>Whitespectre Carousel</h1>
+      <Slider items={data} itemsNumber={4}/>
     </div>
   );
 }

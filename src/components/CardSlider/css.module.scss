@@ -1,0 +1,51 @@
+@import "../../index.scss";
+
+.container {
+  background-color: $light;
+  width: 42vh;
+  height: 42vh;
+  border-radius: 1.5em;
+  box-shadow: 0 2px 20px $gray;
+  overflow: hidden;
+  padding: 0.8rem;
+  transition: transform 200ms ease-in;
+  img {
+    height: 32vh;
+    width: 100%;
+  }
+  &:hover {
+    transform: scale(1.06);
+  }
+  p {
+    font-family: $title;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: $mobile) {
+  .container {
+    width: 15vh;
+    height: 15vh;
+    img {
+      height: 11.5vh;
+      width: 100%;
+    }
+    p {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: $table) and (max-width: $desktop) {
+  .container {
+    width: 25vh;
+    height: 25vh;
+    margin-bottom: 5vh;
+    img {
+      height: 20.5vh;
+      width: 100%;
+    }
+  }
+}
