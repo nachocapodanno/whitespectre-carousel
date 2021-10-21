@@ -28,10 +28,9 @@ const Slider = ({ items, itemsNumber }) => {
 
     return (
         <div>
-            {currentIndex > 0 && <button onClick={prev} className={css.leftArrow}>
+            <button disabled={currentIndex <= 0} onClick={prev} className={css.leftArrow}>
                 &lt;
             </button>
-            }
             <div className={css.container}>
                 {currentItems.map((value) => {
                     return (
@@ -41,10 +40,9 @@ const Slider = ({ items, itemsNumber }) => {
                     );
                 })}
             </div>
-            {currentIndex < (items.length - itemsNumber) && <button onClick={next} className={css.rightArrow}>
+            <button disabled={currentIndex >= (items.length - itemsNumber)} onClick={next} className={css.rightArrow}>
                 &gt;
             </button>
-            }
         </div>
     );
 }

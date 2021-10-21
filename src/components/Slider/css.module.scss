@@ -72,8 +72,10 @@ $time: 2s;
   width: 48px;
   height: 48px;
   border-radius: 24px;
-  background-color: $light;
+  background-color: $black;
   border: 1px solid #ddd;
+  font-size: 1.3rem;
+  color: $light;
 }
 
 .leftArrow {
@@ -82,6 +84,10 @@ $time: 2s;
 
 .rightArrow {
   right: 24px;
+}
+
+.leftArrow:disabled, .rightArrow:disabled {
+  opacity: 0.4;
 }
 
 @media only screen and (max-width: $mobile) {
