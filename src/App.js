@@ -4,10 +4,12 @@ import data from './assets/data.json'
 
 function App() {
 
+  const blocksNumber = 4;
+
   return (
     <div className={css.App}>
       <h1>Whitespectre Carousel</h1>
-      <Carousel items={data} itemsNumber={4}/>
+      <Carousel items={data} itemsNumber={blocksNumber}/>
     </div>
   );
 }
