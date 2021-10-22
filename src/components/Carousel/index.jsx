@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import CardSlider from "../CardSlider";
+import CardCarousel from "../CardCarousel";
 import css from './css.module.scss'
 import placeholder from '../../assets/img/placeholder.png'
 
-const Slider = ({ items, itemsNumber }) => {
+const Carousel = ({ items, itemsNumber }) => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentItems, setCurrentItems] = useState(items.slice(0, itemsNumber));
@@ -35,7 +35,7 @@ const Slider = ({ items, itemsNumber }) => {
                 {currentItems.map((value) => {
                     return (
                         <div key={Math.random()} className={css.fadeIn}>
-                            <CardSlider info={value} />
+                            <CardCarousel info={value} />
                         </div>
                     );
                 })}
@@ -47,4 +47,4 @@ const Slider = ({ items, itemsNumber }) => {
     );
 }
 
-export default Slider;
+export default Carousel;

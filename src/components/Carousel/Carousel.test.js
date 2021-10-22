@@ -1,15 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event'
-import App from './App';
+import Carousel from '.';
+import data from '../../assets/data.json'
 
 test('by default display 4 blocks at once', () => {
-  render(<App />);
+  render(<Carousel items={data} itemsNumber={4}/>);
+  
   let blocksNumber  = screen.getAllByAltText('Tennis Shoe');
   expect(blocksNumber.length).toEqual(4);
 });
 
 test('clicking on next/previous buttons shows next/prev 4 carousel blocks accordingly', () => {
-  render(<App />);
+  render(<Carousel items={data} itemsNumber={4}/>);
+  
   let pages = []
   let isDisabled = false;
   do {
@@ -25,13 +28,14 @@ test('clicking on next/previous buttons shows next/prev 4 carousel blocks accord
 });
 
 test('previous button should be disabled, if user is at the very beginning of carousel', () => {
-  render(<App />);
+  render(<Carousel items={data} itemsNumber={4}/>);
+  
   let leftArrow = screen.getAllByRole('button').find(value => value.className === 'leftArrow') 
   expect(leftArrow).toHaveAttribute('disabled')
 });
 
 test('next button should be disabled, if user is at the very end of the carousel', () => {
-  render(<App />);
+  render(<Carousel items={data} itemsNumber={4}/>);
   
   // moving to second page clicking on right arrow
   let rightArrow = screen.getAllByRole('button').find(value => value.className === 'rightArrow');
@@ -45,9 +49,9 @@ test('next button should be disabled, if user is at the very end of the carousel
 });
 
 test('display a random image for each block from the set of images', () => {
-  render(<App />);
+  render(<Carousel items={data} itemsNumber={4}/>);
+
   let prevImage = screen.getAllByAltText('Tennis Shoe')[0];
-  
   // moving to second page clicking on right arrow
   let rightArrow = screen.getAllByRole('button').find(value => value.className === 'rightArrow');
   userEvent.click(rightArrow);
