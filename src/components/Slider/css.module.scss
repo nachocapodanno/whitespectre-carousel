@@ -2,28 +2,6 @@
 
 $time: 2s;
 
-@mixin screen-height-30 {
-  .container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 30vh;
-  }
-  .leftArrow,
-  .rightArrow {
-    top: 75%;
-  }
-}
-
-@mixin screen-height-column-50 {
-  .container {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 50vh;
-  }
-}
-
 @mixin arrows-top-65 {
   .leftArrow,
   .rightArrow {
@@ -35,6 +13,32 @@ $time: 2s;
   .leftArrow,
   .rightArrow {
     top: 67%;
+  }
+}
+
+@mixin arrows-top-75 {
+  .leftArrow,
+  .rightArrow {
+    top: 75%;
+  }
+}
+
+@mixin screen-height-30 {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 30vh;
+  }
+  @include arrows-top-75
+}
+
+@mixin screen-height-column-50 {
+  .container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 50vh;
   }
 }
 
@@ -147,6 +151,21 @@ $time: 2s;
 @media only screen and (min-width: $table) and (max-width: $desktop) {
   @include screen-height-30;
 }
+
+/* Portrait Iphone 5 */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+    .container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    @include arrows-top-75;
+}
+
 
 /* Landscape */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
