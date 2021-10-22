@@ -1,7 +1,27 @@
-# Getting Started with Create React App
+# Whitespectre Carousel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Requirements
 
+- Build a carousel.
+
+- By default display 4 blocks at once.
+
+- Navigation is made with next and previous buttons.
+
+- Next button should be disabled, if user is at the very end of the carousel.
+
+- Previous button should be disabled, if user is at the very beginning of carousel.
+
+- Clicking on next/previous buttons shows next/prev 4 carousel blocks accordingly.
+
+- The source of carousel block is endpoint on server that return following JSON:
+
+```javascript
+[{title: "First Block", images: [url1, url2, url3]}, {title: "Second Block", images: [url7, url8]}
+,...]
+```
+
+- Display a random image for each block from the set of images.
 ## Available Scripts
 
 In the project directory, you can run:
@@ -17,54 +37,11 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I've created some cases to test our carousel.
 
-### `npm run build`
+## Prod enviroment
+Open [Whitespectre Carousel](https://vibrant-golick-44d933.netlify.app/) to view it in Netlify.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ignacio Capodanno
